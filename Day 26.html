@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analyzer</title>
+</head>
+<body>
+    <h1>Text Analyzer</h1>
+    <p>Enter text below to analyze word count and variety.</p>
+
+    <form method="POST">
+        <textarea name="text_to_analyze" rows="10" cols="50" placeholder="Paste your text here..."></textarea><br>
+        <button type="submit">Analyze Text</button>
+    </form>
+
+    {% if analysis %}
+        <hr>
+        <h2>Results:</h2>
+        <ul>
+            <li><strong>Word Count:</strong> {{ analysis.word_count }}</li>
+            <li><strong>Character Count:</strong> {{ analysis.char_count }}</li>
+            <li><strong>Lexical Density:</strong> {{ analysis.variety }}%</li>
+        </ul>
+    {% endif %}
+</body>
+</html>
